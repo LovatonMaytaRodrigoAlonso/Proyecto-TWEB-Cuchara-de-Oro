@@ -16,8 +16,10 @@
 <body>
     
     <div class="container" id="container">
+        
+        ><!-- REGISTRAR USUARIO -->
         <div class="form-container sign-up">
-            <form onsubmit="return validar()" method="post" action="../PHP/ProcesoImagenacceso.php" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
                 <h1>Crear cuenta</h1>
                 <div class="social-icons">
                     <a href="https://accounts.google.com/login?hl=es" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -25,34 +27,38 @@
                   
                 </div>
                 <span>o usa tu e-mail para registrarte</span>                
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
+                <input type="text" name="name" placeholder="Nombre">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Contraseña">
                 <div>
                     <label for="evidencia">Subir foto de perfil *Opcional*</label>
-                    <input type="file" name="evidencia" id="evidencia" accept=".png, .jpeg">
+                    <input type="file" name="foto" id="evidencia" accept=".png, .jpeg">
                 </div>
-                <button id="registerlisto">Registrarse</button>
+                <button id="registerlisto" name="registrar">Registrarse</button>
 
             </form>
         </div>
+        
+        
+        ><!-- INICIAR SESION -->
         <div class="form-container sign-in">
-            <form>
+            <form action="../PHP/ValidarInicioSesion.php" method="post">
                 <h1>Iniciar sesión</h1>
                 <div class="social-icons">
                     <a href="https://accounts.google.com/login?hl=es" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="https://www.facebook.com/?locale=es_LA" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <!--
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a> -->
                 </div>
                 <span>o usa tu e-mail y contraseña</span>
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Contraseña">
+                <input type="email" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Contraseña">
                 <a href="../HTML/olvidecontra.php">¿Olvidaste tu contraseña?</a>
-                <button id="loginlisto">Acceder</button>
+                <input type="hidden" name="action" value="acceso_user">
+                <button id="loginlisto" name="acceder">Acceder</button>
             </form>
         </div>
+        
+        
+        
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -68,8 +74,14 @@
             </div>
         </div>
     </div>
+    <br>
+    <a href="home.php">Coninuar como Invitado</a>
 
     <script src="../JS/acceso.js"></script>
+    <?php
+    include ('../PHP/ValidarRegistro.php');
+    ?>
+
 </body>
 
 </html>
