@@ -10,6 +10,8 @@
     return $con;
 }
 
+$con = getConnection();
+
 function obtenerNombreUsuario($con, $email) {
     $consulta = "SELECT CLI_Nombres FROM cliente WHERE CLI_Correo = '$email'";
     $resultado = mysqli_query($con, $consulta);

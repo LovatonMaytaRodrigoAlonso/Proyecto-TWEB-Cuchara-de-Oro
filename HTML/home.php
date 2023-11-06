@@ -102,13 +102,21 @@ session_start();
                                 <?php
                                 if (isset($_SESSION['name'])) {
                                     // El usuario ha iniciado sesión, muestra su nombre
-                                    echo "<h2>Hola, {$_SESSION['name']}</h2>";
+                                    echo "<h2>Hola,<br> {$_SESSION['name']}</h2>";
+
+                                    if (isset($_SESSION['user_image'])) {
+                                        $uploadedFile = $_SESSION['user_image'];
+                                    } else {
+                                        $uploadedFile = '';
+                                    }
+                                    ?>
+                                    <img src="<?php echo $_SESSION['user_image']; ?>" width="50" height="70">
+                                    <br>
+                                    <?php
                                     echo '<a href="../PHP/LogOut.php">Cerrar sesión</a>';
-                                    // Aquí puedes mostrar otros contenidos específicos para usuarios autenticados
                                 } else {
                                     // El usuario es un invitado
-                                    echo "<h2>Bienvenido, invitado</h2>";
-                                    // Aquí puedes mostrar contenidos diferentes para usuarios invitados
+                                    echo "<h2>Bienvenido,<br> invitado</h2>";
                                 }
                                 ?>
                                 <i class="fa-solid fa-user"></i>
