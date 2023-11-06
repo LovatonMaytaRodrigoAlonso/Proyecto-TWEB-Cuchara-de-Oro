@@ -17,7 +17,7 @@
     </header>
     
     <main>
-        <form method="post" action="../PHP/ProcesoImagen.php" enctype="multipart/form-data">
+        <form method="post" action="../PHP/ProcesoReclamaciones.php" enctype="multipart/form-data">
             <section>
                 <h3>1. Información del Cliente</h3>
                 <div>
