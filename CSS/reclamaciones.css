@@ -114,8 +114,6 @@ textarea:valid {
     border: 1px solid #ccc;
 }
 
-
-
 /* responsive */
 
 @media (max-width: 768px) {

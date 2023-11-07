@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/PHP/ValidarRegistro.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/HTML/InfoUsuario.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/HTML/acceso.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/HTML/home.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/CSS/InfoUsuario.css</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/PHP/ValidarInicioSesion.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoCucharaDeOro/PHP/conexionBD.php</file>
+        </group>
     </open-files>
 </project-private>

@@ -1,20 +1,34 @@
 <?php
+
+function obtenerImagenUsuario($con, $email) {
+    $sql = "SELECT CLI_FotoPerfil FROM cliente WHERE CLI_Correo = ?";
+    if ($statement = mysqli_prepare($con, $sql)) {
+        mysqli_stmt_bind_param($statement, "s", $email);
+        if (mysqli_stmt_execute($statement)) {
+            mysqli_stmt_bind_result($statement, $imagenUsuario);
+            if (mysqli_stmt_fetch($statement)) {
+                return $imagenUsuario;
+            }
+        }
+    }
+}
+
 include("conexionBD.php");
 
 // Inicia la sesión
 session_start();
 
-$con = getConnection();
+
 
 if (isset($_POST['acceder'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     if (empty($email) || empty($password)) {
-        // Los campos están vacíos
-        echo "Por favor, complete todos los campos";
-        header('Location: ../HTML/acceso.php');
-        // Puedes mostrar un mensaje de error y/o redirigir al usuario al formulario de inicio de sesión
+        //header('Location: ../HTML/acceso.php');
+        ?>
+        <h3 class='bad'>Por favor, complete todos los campos</h3>
+        <?php
     } else {
         $email = mysqli_real_escape_string($con, $email);
         $password = mysqli_real_escape_string($con, $password);
@@ -25,13 +39,20 @@ if (isset($_POST['acceder'])) {
         $filas = mysqli_num_rows($resultado);
         if ($filas) {
             $_SESSION['email'] = $email;
-            $_SESSION['name'] = obtenerNombreUsuario($con,$email);
+            $_SESSION['name'] = obtenerNombreUsuario($con, $email);
+
+            // Obtén la imagen del usuario y guárdala en $_SESSION['user_image'] si está disponible en la base de datos
+            $imagenUsuario = obtenerImagenUsuario($con, $email); // Reemplaza 'obtenerImagenUsuario'
+            if ($imagenUsuario) {
+                $_SESSION['user_image'] = $imagenUsuario;
+            }
+
             header('Location: ../HTML/home.php');
-            // Puedes redirigir al usuario a la página de inicio si las credenciales son válidas
         } else {
-            echo "Credenciales inválidas. Por favor, inténtalo de nuevo.";
-            header('Location: ../HTML/acceso.php');
-            // Puedes mostrar un mensaje de error y/o redirigir al usuario al formulario de inicio de sesión
+            //header('Location: ../HTML/acceso.php');
+            ?>
+            <h3 class='bad'>Credenciales inválidas. Por favor, inténtalo de nuevo</h3>
+            <?php
         }
     }
 }

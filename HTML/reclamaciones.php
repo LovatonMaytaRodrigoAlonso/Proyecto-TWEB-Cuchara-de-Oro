@@ -17,7 +17,7 @@
     </header>
     
     <main>
-        <form method="post" action="../PHP/ProcesoImagen.php" enctype="multipart/form-data">
+        <form method="post" action="../PHP/ProcesoReclamaciones.php" enctype="multipart/form-data">
             <section>
                 <h3>1. Información del Cliente</h3>
                 <div>
@@ -61,22 +61,30 @@
             <section>
                 <h3>2. Identificación del Bien Adquirido</h3>
                 <div>
-                    <label for="plato"><input type="radio" id="plato" name="bienes" value="PLATO"> Plato</label>
+                    <label for="menu"><input type="radio" id="menu" name="bienes" value="MENU"> Menu</label>
+                </div>
+                <div>
+                    <label for="marino"><input type="radio" id="marino" name="bienes" value="MENU MARINO"> Menu Marino</label>
+                </div>
+                <div>
+                    <label for="parrilla"><input type="radio" id="parrilla" name="bienes" value="MENU PARRILLERO"> Menu Parrillero</label>
                 </div>
                 <div>
                     <label for="bebida"><input type="radio" id="bebida" name="bienes" value="BEBIDA"> Bebida</label>
                 </div>
-                <div>
-                    <label for="promo"><input type="radio" id="promo" name="bienes" value="PROMOCION"> Promoción</label>
-                </div>
+                
                 <div>
                     <label for="importe">Importe (S/.):</label>
                     <input type="text" id="importe" name="importe" required placeholder="Importe">
                 </div>
                 <div>
                     <label for="evidencia">Subir evidencia</label>
+                    <label id="aviso">Aviso. La imagen debe pesar menos de 2 MB</label>
                     <input type="file" name="evidencia" id="evidencia" accept=".png, .jpg" onchange="mostrarImagen()"/>
-                    <img id="ImagenSeleccionada" alt="Imagen seleccionada" height="400px"/>
+                    <br>
+                    <center>
+                    <img id="ImagenSeleccionada" alt="Vista previa de la Imagen" height="400px"/>
+                    </center>
                 </div>
                 <div>
                     <label for="comentario">Comentario:</label>
@@ -177,12 +185,17 @@
         if (input.files && input.files[0]) {
             const archivo = input.files[0];
             const reader = new FileReader();
+            let imagenSize = archivo.size;
 
-            reader.onload = function(e){
+            if (imagenSize > 2097152) {
+                alert("La imagen introducida excede los 2 MB, por favor introducir otra de menor tamaño.");
+            }else{
+                reader.onload = function(e){
                 imagen.src = e.target.result;
-            };
-            reader.readAsDataURL(archivo);
-           
+                };
+                reader.readAsDataURL(archivo);
+            }
+
             } else{
                 imagen.src='';
             }            

@@ -11,7 +11,7 @@
 <body>
     <div>
         <h1>¡Datos Enviados Correctamente!</h1>
-        <h2>BIENVENIDO A CUCHARA DE ORO</h2>
+        <h2>GRACIAS POR TU COMENTARIO, SEGUIREMOS MEJORANDO</h2>
         <h2>Redirigiendo a home...</h2>
 
         <img src="../Imagenes/Cuchara de Oro.jpg" alt="">
@@ -19,7 +19,7 @@
     <script>
         setTimeout(function () {
             window.location.replace("../HTML/home.php");
-        }, 2000);
+        }, 3000);
     </script>
 </body>
 
