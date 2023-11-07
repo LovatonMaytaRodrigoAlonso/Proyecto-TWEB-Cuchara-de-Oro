@@ -54,7 +54,26 @@ session_start();
                     // window.location.href = "compras.html";
                 });
             });
-        </script>	
+        </script>
+        <!--COMBOBOX PARA EL USUARIO-->
+        <script>
+    const userIcon = document.getElementById('user-icon');
+    const userDropdown = document.getElementById('user-dropdown');
+
+    userIcon.addEventListener('click', function() {
+        userDropdown.classList.toggle('show');
+    });
+
+    // Cierra el menú desplegable si haces clic fuera de él
+    window.addEventListener('click', function(event) {
+        if (!userIcon.contains(event.target) && !userDropdown.contains(event.target)) {
+            userDropdown.classList.remove('show');
+        }
+    });
+</script>
+
+
+
     </head>
     <body>
         <header>
@@ -105,6 +124,14 @@ session_start();
                                     echo "<h2>Hola, {$_SESSION['name']}</h2>";
                                     echo '<a href="../PHP/LogOut.php">Cerrar sesión</a>';
                                     // Aquí puedes mostrar otros contenidos específicos para usuarios autenticados
+                                    // Mostrar el menú desplegable si el usuario ha iniciado sesión
+                    echo '<select id="user-options">';
+                    echo '<option value="my-account">Mi Cuenta</option>';
+                    echo '<option value="my-account">Billetera</option>';
+                    echo '<option value="support">Soporte</option>';
+                    echo '<option value="profile-settings">Configuración del perfil</option>';  
+                    echo '<option value="send-comments">Enviar Comentarios</option>';
+                    echo '</select>';
                                 } else {
                                     // El usuario es un invitado
                                     echo "<h2>Bienvenido, invitado</h2>";
@@ -116,6 +143,9 @@ session_start();
 
                             </div>
                             </svg>
+                            
+
+
 
 
                             <!--inicializa su conteo de la bolsa en cero-->
@@ -124,7 +154,7 @@ session_start();
                             </div>
                         </div>
 
-                        <div class="container-cart-products hidden-cart">
+                        <div class="container-cart-products hidden-cart"> <!------PONERLE LA R AQUÍIIII NO TE OLVIDES------>
                             <div class="row-product hidden">
                                 <div class="cart-product">
                                     <div class="info-cart-product">

@@ -3,9 +3,10 @@ function Conexion(){
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $db = "restaurante";
+    $db = "cuchara_de_oroo";
+    $port = "3307";
 
-    $conexion = new mysqli($host, $user, $pass, $db);
+    $conexion = new mysqli($host, $user, $pass, $db,$port);
 
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);

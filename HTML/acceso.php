@@ -75,7 +75,7 @@
         </div>
     </div>
     <br>
-    <a href="home.php">Coninuar como Invitado</a>
+    <a href="home.php">Continuar como Invitado</a>
 
     <script src="../JS/acceso.js"></script>
     <?php

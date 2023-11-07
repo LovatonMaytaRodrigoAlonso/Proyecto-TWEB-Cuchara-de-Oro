@@ -1143,3 +1143,33 @@ html {
 		font-size: 1.6rem;
 	}
 }
+
+.user-dropdown {
+    display: none;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+#user-options {
+    width: 200px; /* Ancho del select */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+#user-options option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+#user-options:hover {
+    cursor: pointer;
+}
+
+

@@ -65,6 +65,18 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="icon-cart">
                         <div class="container-user">
+                             <?php
+                                if (isset($_SESSION['name'])) {
+                                    // El usuario ha iniciado sesión, muestra su nombre
+                                    echo "<h2>Hola, {$_SESSION['name']}</h2>";
+                                    echo '<a href="../PHP/LogOut.php">Cerrar sesión</a>';
+                                    // Aquí puedes mostrar otros contenidos específicos para usuarios autenticados
+                                } else {
+                                    // El usuario es un invitado
+                                    echo "<h2>Bienvenido, invitado</h2>";
+                                    // Aquí puedes mostrar contenidos diferentes para usuarios invitados
+                                }
+                                ?>
                             <i class="fa-solid fa-user"></i>
                             <i class="fa-solid fa-basket-shopping"></i>
 
