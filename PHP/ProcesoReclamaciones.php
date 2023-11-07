@@ -11,9 +11,10 @@ if (isset($_REQUEST["accion"])) {
         $apeP = $_POST["apeP"];
         $apeM = $_POST["apeM"];
         $direccion = $_POST["direccion"];
-        $tipoDoc = $_POST["tipoDoc"];
+        $tipoDoc = $_POST["tipDoc"];
         $numDoc = $_POST["doc"];
         $fono = $_POST["telefono"];
+        $correo = $_POST["correo"];
         $bien = $_POST["bienes"];
         $importe = $_POST["importe"];
         $comentario = $_POST["comentario"];
@@ -40,7 +41,34 @@ if (isset($_REQUEST["accion"])) {
 
                     if (move_uploaded_file($nombreArchivoTemporal, $nombreArchivoDestino . $nombreArchivo)) {
                         echo "<script>alert('El archivo se ha cargado y movido correctamente.')</script>";
-                        header('Location: ../HTML/exito.php');
+
+                        if ($bien == "MENU") {
+                            $bien = 1;
+                        }
+                        if ($bien == "MENU MARINO") {
+                            $bien = 2;
+                        }
+                        if ($bien == "MENU PARRILLERO") {
+                            $bien = 3;
+                        }
+                        if ($bien == "BEBIDA") {
+                            $bien = 4;
+                        }
+
+                        $conex = getConnection();
+                        $query = "INSERT INTO reclamos(REC_Nombres, REC_Apellido_Paterno, "
+                                . "REC__Apellido_Materno, REC_Direccion, REC_TipoDoc, REC_Doc, "
+                                . "REC_Telefono, REC_Correo, REC_BienAdq, REC_Importe, "
+                                . "REC_Evidencia, REC_Comentario) "
+                                . "VALUES ('$nom','$apeP','$apeM','$direccion','$tipoDoc','$numDoc','$fono','$correo','$bien','$importe','$nombreArchivoDestino . $nombreArchivo','$comentario');";
+                        $rpta = mysqli_query($conex, $query);
+
+                        if ($rpta) {
+                            header('Location: ../HTML/exito.php');
+                        }else{
+                            echo "<script>alert('Hubo un error al enviar el formulario.')</script>";
+                        }
+
                     } else {
                         echo "<script>alert('Hubo un error al cargar o mover el archivo.')</script>";
                     }
@@ -54,9 +82,5 @@ if (isset($_REQUEST["accion"])) {
         } else {
             echo "<script>alert('Error al subir')</script>";
         }
-        
-        $con = getConnection();
-        
-        
     }
 }
