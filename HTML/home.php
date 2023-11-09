@@ -156,6 +156,7 @@ session_start();
                             </div>
                             </svg>
                             
+                            
 
 
 
@@ -167,6 +168,7 @@ session_start();
                         </div>
 
                         <div class="container-cart-products hidden-cart"> <!------PONERLE LA R AQUÍIIII NO TE OLVIDES------>
+                            
                             <div class="row-product hidden">
                                 <div class="cart-product">
                                     <div class="info-cart-product">
@@ -226,7 +228,7 @@ session_start();
         <main class="main-content">
 
             <div class="carruselg">
-                <a href="/HTML/Promociones.html">
+                <a href="../HTML/Promociones.php">
                     <div class="carrusel carrusel-1">
                         <img src="../Imagenes/Banner/1.png"
                              alt="">
@@ -755,6 +757,7 @@ session_start();
                         </ul>
                     </div>
 
+                    
                     <div class="newsletter">
                         <p class="title-footer">Boletín informativo</p>
 
@@ -763,8 +766,10 @@ session_start();
                                 Suscríbete a nuestros boletines ahora y mantente al
                                 día con nuevas colecciones y ofertas exclusivas que tenemos para ti.
                             </p>
-                            <input type="email" placeholder="Ingresa el correo aquí...">
-                            <button>Suscríbete</button>
+                            <form method="post" action="../PHP/newsletter.php">
+                            <input type="email" placeholder="Ingresa el correo aquí..." name="correo">
+                            <button type="submit">Suscríbete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -773,7 +778,6 @@ session_start();
                     <p>
                         Cuchara de Oro &copy; 2023
                     </p>
-
                     <img src="../img/payment.png" alt="Pagos">
                 </div>
             </div>
