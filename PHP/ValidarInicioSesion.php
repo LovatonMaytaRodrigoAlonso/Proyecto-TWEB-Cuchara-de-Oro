@@ -13,12 +13,10 @@ function obtenerImagenUsuario($con, $email) {
     }
 }
 
-include("conexionBD.php");
+include_once '../HTML/Consultas.php';
 
 // Inicia la sesión
 session_start();
-
-
 
 if (isset($_POST['acceder'])) {
     $email = $_POST['email'];
@@ -30,19 +28,19 @@ if (isset($_POST['acceder'])) {
         <h3 class='bad'>Por favor, complete todos los campos</h3>
         <?php
     } else {
-        $email = mysqli_real_escape_string($con, $email);
-        $password = mysqli_real_escape_string($con, $password);
+        $email = mysqli_real_escape_string($conexion, $email);
+        $password = mysqli_real_escape_string($conexion, $password);
 
         $consulta = "SELECT * FROM cliente WHERE CLI_Correo='$email' AND CLI_Password='$password'";
-        $resultado = mysqli_query($con, $consulta);
+        $resultado = mysqli_query($conexion, $consulta);
 
         $filas = mysqli_num_rows($resultado);
         if ($filas) {
             $_SESSION['email'] = $email;
-            $_SESSION['name'] = obtenerNombreUsuario($con, $email);
+            $_SESSION['name'] = obtenerNombreUsuario($conexion, $email);
 
             // Obtén la imagen del usuario y guárdala en $_SESSION['user_image'] si está disponible en la base de datos
-            $imagenUsuario = obtenerImagenUsuario($con, $email); // Reemplaza 'obtenerImagenUsuario'
+            $imagenUsuario = obtenerImagenUsuario($conexion, $email); // Reemplaza 'obtenerImagenUsuario'
             if ($imagenUsuario) {
                 $_SESSION['user_image'] = $imagenUsuario;
             }

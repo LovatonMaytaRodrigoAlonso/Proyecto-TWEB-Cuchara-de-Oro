@@ -1,22 +1,39 @@
 <?php
-function Conexion(){
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db = "cuchara_de_oroo";
-    $port = "3307";
 
-    $conexion = new mysqli($host, $user, $pass, $db,$port);
+include '../PHP/conexionBD.php';
 
-    if ($conexion->connect_error) {
-        die("Error de conexión: " . $conexion->connect_error);
+//function Conexion(){
+//    $host = "localhost";
+//    $user = "root";
+//    $pass = "";
+//    $db = "cuchara_de_oroo";
+//    $port = "3307";
+//
+//    $conexion = new mysqli($host, $user, $pass, $db,$port);
+//
+//    if ($conexion->connect_error) {
+//        die("Error de conexión: " . $conexion->connect_error);
+//    }
+//    return $conexion;  
+//}
+//
+
+$conexion = Conexion();
+
+function obtenerNombreUsuario($conexion, $email) {
+    $consulta = "SELECT CLI_Nombres FROM cliente WHERE CLI_Correo = '$email'";
+    $resultado = mysqli_query($conexion, $consulta);
+
+    if ($resultado) {
+        $fila = mysqli_fetch_assoc($resultado);
+        return $fila['CLI_Nombres'];
+    } else {
+        return null;
     }
-    return $conexion;  
 }
-?>
 
-<!--MENU DEL DIA-->
-<?php
+//MENU DEL DIA
+
 //AJI DE POLLO
 $conexion = Conexion();
 
@@ -30,11 +47,10 @@ if ($result->num_rows > 0) {
         $precio0 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
 ?>
 <!--LOMO SALTADO-->
 <?php
-$conexion = Conexion();
+
 
 $sql = "SELECT COM_Nombre, COM_Precio FROM comida LIMIT 5";
 
@@ -46,7 +62,7 @@ if ($result->num_rows > 0) {
         $precio1 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--ARROZ CON POLLO-->
 <?php
@@ -62,7 +78,7 @@ if ($result->num_rows > 0) {
         $precio2 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--SECO DE CARNE-->
 <?php
@@ -78,7 +94,7 @@ if ($result->num_rows > 0) {
         $precio3 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--TALLARINES VERDES-->
 <?php
@@ -94,7 +110,7 @@ if ($result->num_rows > 0) {
         $precio4 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--TANTICUCHOS-->
 <?php
@@ -110,7 +126,7 @@ if ($result->num_rows > 0) {
         $precio5 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PICANTE DE CARNE-->
 <?php
@@ -126,7 +142,7 @@ if ($result->num_rows > 0) {
         $precio6 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CAU CAU-->
 <?php
@@ -142,7 +158,7 @@ if ($result->num_rows > 0) {
         $precio7 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CHANFAINITA-->
 <?php
@@ -158,7 +174,7 @@ if ($result->num_rows > 0) {
         $precio8 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 
 <!--MENU MARINO-->
@@ -176,7 +192,7 @@ if ($result->num_rows > 0) {
         $precio9 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--BROCHETAS DE LANGOSTA Y CONCHA-->
 <?php
@@ -192,7 +208,7 @@ if ($result->num_rows > 0) {
         $precio10 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CEVICHE DE PESCADO-->
 <?php
@@ -208,7 +224,7 @@ if ($result->num_rows > 0) {
         $precio11 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CHICHARRON DE PESCADO-->
 <?php
@@ -224,7 +240,7 @@ if ($result->num_rows > 0) {
         $precio12 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PAELA DE MARISCOS-->
 <?php
@@ -240,7 +256,7 @@ if ($result->num_rows > 0) {
         $precio13 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CHICHARRON DE POTA-->
 <?php
@@ -256,7 +272,7 @@ if ($result->num_rows > 0) {
         $precio14 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 
 <!--PARRILLA-->
@@ -274,7 +290,7 @@ if ($result->num_rows > 0) {
         $precio15 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PARRILLA ECONOMICA-->
 <?php
@@ -290,7 +306,7 @@ if ($result->num_rows > 0) {
         $precio16 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--COSTILLAS BBQ-->
 <?php
@@ -306,7 +322,7 @@ if ($result->num_rows > 0) {
         $precio17 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PARRILLA FAMILIAR-->
 <?php
@@ -322,7 +338,7 @@ if ($result->num_rows > 0) {
         $precio18 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PARRILLA CLASICA FAMILIAR-->
 <?php
@@ -338,7 +354,7 @@ if ($result->num_rows > 0) {
         $precio19 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--PARRILLA PARA 2-->
 <?php
@@ -354,7 +370,7 @@ if ($result->num_rows > 0) {
         $precio20 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 
 <!--BEBIDAS-->
@@ -372,7 +388,7 @@ if ($result->num_rows > 0) {
         $precio21 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--CHICHA MORADA-->
 <?php
@@ -388,7 +404,7 @@ if ($result->num_rows > 0) {
         $precio22 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
 <!--MARACUYA-->
 <?php
@@ -404,5 +420,5 @@ if ($result->num_rows > 0) {
         $precio23 = $row["COM_Precio"];
     }
 } 
-$conexion->close();
+
 ?>
