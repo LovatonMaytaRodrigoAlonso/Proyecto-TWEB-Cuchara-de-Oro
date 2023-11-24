@@ -17,7 +17,7 @@
     
     <div class="container" id="container">
         
-        ><!-- REGISTRAR USUARIO -->
+        ><!-- REGISTRO DE USUARIO -->
         <div class="form-container sign-up">
             <form method="post" enctype="multipart/form-data">
                 <h1>Crear cuenta</h1>
