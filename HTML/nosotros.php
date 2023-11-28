@@ -1,9 +1,9 @@
 <?php include_once '../PHP/Header.php'; ?>
     
 
-<html>
+
     <main>
-        <link rel="stylesheet" href="../CSS/nosotros.css">
+      <!--  <link rel="stylesheet" href="../CSS/nosotros.css"> -->
         <h1>¿Quienes somos?</h1>
         <div class="container-nosotros">
             
