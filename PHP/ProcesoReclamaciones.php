@@ -55,13 +55,13 @@ if (isset($_REQUEST["accion"])) {
                             $bien = 4;
                         }
 
-                        $conex = getConnection();
+                        $conexion = Conexion();
                         $query = "INSERT INTO reclamos(REC_Nombres, REC_Apellido_Paterno, "
                                 . "REC__Apellido_Materno, REC_Direccion, REC_TipoDoc, REC_Doc, "
                                 . "REC_Telefono, REC_Correo, REC_BienAdq, REC_Importe, "
                                 . "REC_Evidencia, REC_Comentario) "
                                 . "VALUES ('$nom','$apeP','$apeM','$direccion','$tipoDoc','$numDoc','$fono','$correo','$bien','$importe','$nombreArchivoDestino . $nombreArchivo','$comentario');";
-                        $rpta = mysqli_query($conex, $query);
+                        $rpta = mysqli_query($conexion, $query);
 
                         if ($rpta) {
                             header('Location: ../HTML/exito.php');

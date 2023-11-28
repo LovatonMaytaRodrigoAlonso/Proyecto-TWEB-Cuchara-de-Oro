@@ -52,7 +52,7 @@ hr {
 
 /*Preguntas Frecuentes*/
 
-/*#preguntas-frecuentes {
+#preguntas-frecuentes {
     max-width: 100%;
 }
 
@@ -104,7 +104,7 @@ hr {
 
 section{
     padding-top: 5%;
-}*/
+}
 
 @media(max-width: 772px) {
     .container-nosotros{
