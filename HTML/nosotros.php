@@ -3,7 +3,7 @@
 
 
     <main>
-      <!--  <link rel="stylesheet" href="../CSS/nosotros.css"> -->
+
         <h1>¿Quienes somos?</h1>
         <div class="container-nosotros">
             
@@ -18,15 +18,17 @@
         </div>
         <h1>Ubicanos</h1>
         <div style="display: flex; justify-content: center;"> <br>
-            <iframe
+            <iframe>
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15616.394691747344!2d-77.0450454!3d-11.8982172!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d16d5b8ffcef%3A0x378965e80406be8e!2sCuchara%20de%20Oro!5e0!3m2!1ses-419!2spe!4v1696745411795!5m2!1ses-419!2spe"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                <link rel="stylesheet" href="../CSS/nosotros.css">
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <!-- Preguntas frecuentes -->
 		<section id="preguntas-frecuentes">
 			<h2>Preguntas Frecuentes</h2>
+                        <center>
 			<div class="container">
 				<div class="pregunta">
 				   <div class="pregunta_encabezado">
@@ -84,6 +86,7 @@
 				   </div>  
 				 </div> 
 			</div> 
+                        </center>    
 		
 		
 				 <script>
