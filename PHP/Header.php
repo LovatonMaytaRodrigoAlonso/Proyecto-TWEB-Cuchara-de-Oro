@@ -18,7 +18,7 @@ session_start();
         <link rel="stylesheet" href="../CSS/header.css" />
         <link rel="stylesheet" href="../CSS/nosotros.css">
         <link rel="stylesheet" href="../CSS/promociones.css">
-        <!--<link rel="stylesheet" href="../CSS/FAQ.css">-->
+        <link rel="stylesheet" href="../CSS/FAQ.css">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
