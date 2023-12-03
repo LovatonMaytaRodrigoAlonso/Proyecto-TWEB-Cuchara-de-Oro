@@ -18,6 +18,7 @@ if (isset($_REQUEST["accion"])) {
         $bien = $_POST["bienes"];
         $importe = $_POST["importe"];
         $comentario = $_POST["comentario"];
+        $estado = "Por atender";
 
 //        echo $nom . " " . $apeP . " " . $apeM . " " . $direccion . " " .
 //        $numDoc . " " . $fono . " " . $bien . " " . $importe . " " . $comentario;
@@ -59,8 +60,8 @@ if (isset($_REQUEST["accion"])) {
                         $query = "INSERT INTO reclamos(REC_Nombres, REC_Apellido_Paterno, "
                                 . "REC__Apellido_Materno, REC_Direccion, REC_TipoDoc, REC_Doc, "
                                 . "REC_Telefono, REC_Correo, REC_BienAdq, REC_Importe, "
-                                . "REC_Evidencia, REC_Comentario) "
-                                . "VALUES ('$nom','$apeP','$apeM','$direccion','$tipoDoc','$numDoc','$fono','$correo','$bien','$importe','$nombreArchivoDestino . $nombreArchivo','$comentario');";
+                                . "REC_Evidencia, REC_Comentario, REC_Estado) "
+                                . "VALUES ('$nom','$apeP','$apeM','$direccion','$tipoDoc','$numDoc','$fono','$correo','$bien','$importe','$nombreArchivoDestino . $nombreArchivo','$comentario','$estado');";
                         $rpta = mysqli_query($conexion, $query);
 
                         if ($rpta) {
