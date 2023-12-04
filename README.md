@@ -1,10 +1,10 @@
 # Proyecto-TWEB-Cuchara-de-Oro
 Hola! En este repositorio se almacenará el proyecto de Cuchara de Oro hecho en NetBeans.
 
-SCRIPT DE LA BASE DE DATOS (cuchara_de_oroo):
+SCRIPT DE LA BASE DE DATOS (cuchara_de_oro):
 
-create database cuchara_de_oroo;
-use cuchara_de_oroo;
+create database cuchara_de_oro;
+use cuchara_de_oro;
 CREATE TABLE CLIENTE
 ( 
 	CLI_ID               int PRIMARY KEY AUTO_INCREMENT NOT NULL ,

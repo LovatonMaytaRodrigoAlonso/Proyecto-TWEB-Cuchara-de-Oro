@@ -322,6 +322,7 @@ header {
     padding: 20px 0;
     gap: 20px;
     font-family: 'Times New Roman', Times, serif;
+    position:relative;
 }
 
 .cart-total h3 {
@@ -396,58 +397,49 @@ hr {
    
 }
 @media screen and (max-width:720px) {
-
+    
     
 }
-/* Estilos generales para el botón de pago */
-.Btn-pago {
-    width: 130px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(15, 15, 15);
-    border: none;
-    color: white;
-    font-weight: 600;
-    gap: 8px;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
-    position: relative;
-    overflow: hidden;
-    transition-duration: .3s;
-  }
-  
-  .svgIcon {
-    width: 16px;
-  }
-  
-  .svgIcon path {
-    fill: white;
-  }
-  
-  .Btn-pago::before {
-    width: 130px;
-    height: 130px;
-    position: absolute;
-    content: "";
-    background-color: white;
-    border-radius: 50%;
-    left: -100%;
-    top: 0;
-    transition-duration: .3s;
-    mix-blend-mode: difference;
-  }
-  
-  .Btn-pago:hover::before {
-    transition-duration: .3s;
-    transform: translate(100%,-50%);
-    border-radius: 0;
-  }
-  
-  .Btn-pago:active {
-    transform: translate(5px,5px);
-    transition-duration: .3s;
-  }
+.btn {
+ padding: 1.1em 2em;
+ background: none;
+ border: 2px solid #fff;
+ font-size: 15px;
+ color: #131313;
+ cursor: pointer;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.3s;
+ border-radius: 12px;
+ background-color: #ecd448;
+ font-weight: bolder;
+ box-shadow: 0 2px 0 2px #000;
+}
 
+.btn:before {
+ content: "";
+ position: absolute;
+ width: 100px;
+ height: 120%;
+ background-color: #ff6700;
+ top: 50%;
+ transform: skewX(30deg) translate(-150%, -50%);
+ transition: all 0.5s;
+}
+
+.btn:hover {
+ background-color: #4cc9f0;
+ color: #fff;
+ box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+ transform: skewX(30deg) translate(150%, -50%);
+ transition-delay: 0.1s;
+}
+
+.btn:active {
+ transform: scale(0.9);
+}
+/* Estilos generales para el botón de pago */
 /* Puedes personalizar más estilos según tus preferencias de diseño */
