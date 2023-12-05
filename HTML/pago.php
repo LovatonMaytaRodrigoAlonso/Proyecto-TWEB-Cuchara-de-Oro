@@ -16,38 +16,43 @@
             <h1>Carrito de compras</h1>
             <h2>Cuchara de Oro</h2>
         </header>
-         <form>
-             <main>
-               <h2>Datos Personales</h2>
-                    
-                      <label for="nombre">Nombre:</label>
-                      <input type="text" id="nombre" name="nombre" required>
-                      
-                      <label for="nombre">Apellido:</label>
-                      <input type="text" id="apellido" name="nombre" required>
-                      
-                      <label for="direccion">Dirección:</label>
-                      <input type="text" id="direccion" name="direccion" required>
+        <form>
+            <main id="mainContainer"> </main>
+                
+            
+            
 
-                      <label for="distrito">Distrito:</label>
-                      <input type="text" id="distrito" name="distrito" required>
+            <main>
+                <h2>Datos Personales</h2>
 
-                      <label for="provincia">Provincia:</label>
-                      <input type="text" id="provincia" name="provincia" required>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-                    <h2>Método de Pago</h2>
-                      <input type="radio" id="yape" name="metodoPago" value="yape" required>
-                      <label for="yape">Yape</label>
+                <label for="nombre">Apellido:</label>
+                <input type="text" id="apellido" name="nombre" required>
 
-                      <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
-                      <label for="tarjeta">Tarjeta de Crédito</label>
-         
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="distrito">Distrito:</label>
+                <input type="text" id="distrito" name="distrito" required>
+
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" required>
+
+                <h2>Método de Pago</h2>
+                <input type="radio" id="yape" name="metodoPago" value="yape" required>
+                <label for="yape">Yape</label>
+
+                <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
+                <label for="tarjeta">Tarjeta de Crédito</label>
+
                 <center>
                     <button class="btn_terminar" type="button" onclick="procesarPago()">Procesar pago</button>
                 </center>     
             </main>    
         </form> 
-         <script>
+        <script>
             function procesarPago() {
                 var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
 
@@ -60,5 +65,6 @@
                 }
             }
         </script>
+        <script src="../JS/pagocarrito.js"></script>
     </body>
 </html>
