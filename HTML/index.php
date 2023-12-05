@@ -327,7 +327,10 @@
     </main>
 
     <?php include_once '../PHP/Footer.php'; ?>
-    
+    <script
+            src="https://kit.fontawesome.com/81581fb069.js"
+            crossorigin="anonymous"
+        ></script>
 </body>
 
 </html>

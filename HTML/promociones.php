@@ -42,6 +42,10 @@
             
         <?php include_once '../PHP/Footer.php'; ?>
     </body>
+    <script
+            src="https://kit.fontawesome.com/81581fb069.js"
+            crossorigin="anonymous"
+        ></script>
     
 </body>
 </html>

@@ -4,8 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Carrito de compra  | Cuchara de Oro</title> 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="icon" type="image/x-icon" href="../Imagenes/Cuchara de Oro circulo.png">
         <link rel="stylesheet" href="../CSS/reclamaciones.css">
+
         <link rel="stylesheet" href="../CSS/footer1.css"> 
         <link rel="stylesheet" href="../CSS/home.css">
     </head>
@@ -14,32 +16,49 @@
             <h1>Carrito de compras</h1>
             <h2>Cuchara de Oro</h2>
         </header>
-        <main>
+         <form>
+             <main>
+               <h2>Datos Personales</h2>
+                    
+                      <label for="nombre">Nombre:</label>
+                      <input type="text" id="nombre" name="nombre" required>
+                      
+                      <label for="nombre">Apellido:</label>
+                      <input type="text" id="apellido" name="nombre" required>
+                      
+                      <label for="direccion">Dirección:</label>
+                      <input type="text" id="direccion" name="direccion" required>
 
-            <form method="post" >
-                <section>
-                    <h3>Datos del cliente: </h3>
-                    <div>
-                        <label for="nombre">Nombre completo:</label>
-                        <input type="text"  name="nombre" required placeholder="Nombre">
-                    </div>               
-                    <div>
-                        <label for="direccion">Dirección:</label>
-                        <input type="text"  name="direccion" required placeholder="Dirección">
-                    </div>
-                    <div>
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel"  name="telefono" required placeholder="Teléfono">
-                    </div>
+                      <label for="distrito">Distrito:</label>
+                      <input type="text" id="distrito" name="distrito" required>
 
-                </section>
+                      <label for="provincia">Provincia:</label>
+                      <input type="text" id="provincia" name="provincia" required>
 
-                <input type="hidden" name="accion" value="add">
-                <button class="btn_terminar"  type="submit">
-                    <li><a href="../HTML/verificacionpedido.php">Continuar compra</a></li></button>
-            </form>
-        </main>
+                    <h2>Método de Pago</h2>
+                      <input type="radio" id="yape" name="metodoPago" value="yape" required>
+                      <label for="yape">Yape</label>
+
+                      <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
+                      <label for="tarjeta">Tarjeta de Crédito</label>
+         
+                <center>
+                    <button class="btn_terminar" type="button" onclick="procesarPago()">Procesar pago</button>
+                </center>     
+            </main>    
+        </form> 
+         <script>
+            function procesarPago() {
+                var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+
+                if (metodoPago === "yape") {
+                    window.location.href = "../HTML/yape.php";
+                } else if (metodoPago === "tarjeta") {
+                    window.location.href = "../HTML/tarjeta.php";
+                } else {
+                    alert("Selecciona un método de pago");
+                }
+            }
+        </script>
     </body>
 </html>
-
-
