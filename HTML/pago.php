@@ -35,7 +35,7 @@
                 </section>
 
                 <input type="hidden" name="accion" value="add">
-                <button class="btn_terminar" type="submit">
+                <button class="btn_terminar"  type="submit">
                     <li><a href="../HTML/verificacionpedido.php">Continuar compra</a></li></button>
             </form>
         </main>
