@@ -50,7 +50,7 @@ body {
 
 .tarjeta .delantera {
 	width: 100%;
-	background: url(../Imagenes/Tarjeta/12a247fb2f2729acf01760008023ceef.jpg);
+	background: url(../Imagenes/Tarjeta/tarjetadelantera.jpg);
 	background-size: cover;
 }
 
@@ -74,7 +74,7 @@ body {
 
 .delantera .grupo .label {
 	font-size: 16px;
-	color: #7d8994;
+	color: #fff;
 	margin-bottom: 5px;
 }
 
@@ -94,7 +94,7 @@ body {
 
 /* ---------- Tarjeta Trasera ----------*/
 .trasera {
-	background: url(../Imagenes/Tarjeta/12a247fb2f2729acf01760008023ceef.jpg);
+	background: url(../Imagenes/Tarjeta/tarjetatrasera.jpg);
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -203,7 +203,7 @@ body {
 
 .formulario-tarjeta label {
 	display: block;
-	color: #7d8994;
+	color: #fff;
 	margin-bottom: 5px;
 	font-size: 16px;
 }
