@@ -16,7 +16,7 @@
 		<section class="tarjeta" id="tarjeta">
 			<div class="delantera">
 				<div class="logo-marca" id="logo-marca">
-					
+					<img src="../Imagenes/Tarjeta/visa.png" class="chip" alt="">
 				</div>
 				<img src="../Imagenes/Tarjeta/chip-tarjeta.png" class="chip" alt="">
 				<div class="datos">
