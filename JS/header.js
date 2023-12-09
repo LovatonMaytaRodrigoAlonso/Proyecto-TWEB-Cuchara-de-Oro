@@ -62,76 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
             showHTML();
             
             localStorage.setItem('products', JSON.stringify(allProducts));
-//            console.log("aaasas");
-            // Recupera los datos del localStorage
-// JavaScript (tu_script.js)
-// Recupera los datos del localStorage
-// Recupera los datos del localStorage
-//const storedProducts = localStorage.getItem('products');
-//
-//// Verifica si hay datos almacenados
-//if (storedProducts) {
-//    // Convierte la cadena a un arreglo
-//    const allProducts = JSON.parse(storedProducts);
-//
-//    // Obtiene el elemento del DOM donde mostrar los productos (main)
-//    const mainContainer = document.getElementById('mainContainer');
-//
-//    // Limpia el contenido anterior del elemento (si lo hay)
-//    mainContainer.innerHTML = '';
-//
-//    // Muestra los productos en el DOM dentro del main
-//    allProducts.forEach(product => {
-//        const productElement = document.createElement('div');
-//        productElement.innerHTML = `
-//            <h2>${product.title}</h2>
-//            <p>Quantity: ${product.quantity}</p>
-//            <p>Price: ${product.price}</p>
-//        `;
-//        mainContainer.appendChild(productElement);
-//    });
-//} else {
-//    console.log('No hay productos almacenados en el localStorage.');
-//}
 
-
-
-
-//            localStorage.setItem('allProducts', JSON.stringify(allProducts));
-//            cargarCarrito();
-
-//            fetch('pago.php', {
-//                method: 'POST',
-//                headers: {
-//                    'Content-Type': 'application/json',
-//                },
-//                body: JSON.stringify({datos: allProducts}),
-//            })
-//                    .then((response) => response.json())
-//                    .then((data) => {
-//                        console.log("Datos enviados con exito.");
-//                    })
-//                    .catch((error) => {
-//                        console.error('Error:', error);
-//                    });
-            
         }
 
     });
 
-//    function cargarCarrito() {
-//        const carritoGuardado = localStorage.getItem('allProducts');
-//
-//        if (carritoGuardado) {
-//            allProducts = JSON.parse(carritoGuardado);
-//            console.log(JSON.parse(carritoGuardado));
-//        } else {
-//            console.log('El carrito está vacío');
-//        }
-//
-//    }
-//
-//    document.addEventListener('DOMContentLoaded', cargarCarrito);
 
     // el evento servira para eliminar un plato del carrito 
     rowProduct.addEventListener('click', e => {

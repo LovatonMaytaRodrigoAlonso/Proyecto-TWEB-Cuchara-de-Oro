@@ -1,6 +1,6 @@
 <?php
-include("conexionBD.php");
 
+include("conexionBD.php");
 
 if (isset($_POST['registrar'])) {
     
