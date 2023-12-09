@@ -24,7 +24,7 @@
 		<h2>Preguntas Frecuentes</h2>
 		<center>
 			<div class="container">
-				<div class="pregunta">
+				<!-- <div class="pregunta">
 					<div class="pregunta_encabezado">
 						<h3>¿Dónde se encuentran?</h3>
 					</div>
@@ -78,7 +78,9 @@
 					<div class="respuesta">
 						El envío a domicilio tiene un mínimo de 5 soles.
 					</div>
-				</div>
+				</div> -->
+
+				<?php include_once '../PHP/ObtenerFAQ.php'; ?>
 			</div>
 		</center>
 
