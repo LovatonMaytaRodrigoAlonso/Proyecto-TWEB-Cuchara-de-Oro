@@ -27,7 +27,8 @@
         </center>
         <div class="container-menu">
             <!--AJI DE POLLO-->
-            <div class="container-items">                           
+            <div class="container-items">      
+                <div class="animate__animated animate__flipInX">
                 <div class="item">
                     <figure>
                         <img src="https://www.recetas-argentinas.com/base/stock/Recipe/61-image/61-image_web.jpg"
@@ -39,6 +40,8 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
+                </div>                     
+                
             <!--LOMO SALTADO-->
                 <div class="item">                
                     <figure>

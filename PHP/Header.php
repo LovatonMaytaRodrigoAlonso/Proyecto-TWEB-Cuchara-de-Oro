@@ -30,6 +30,9 @@ session_start();
     <!--Iconos-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!--Animaciones Libreria-->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <script>
         // Espera a que el documento esté completamente cargado
         document.addEventListener("DOMContentLoaded", function() {
@@ -139,11 +142,11 @@ session_start();
                                     <br>
 
                                     <ul id="user-options" style="display: none;">
-                                        <li><a href="#">Mi Cuenta</a></li>
-                                        <li><a href="#">Billetera</a></li>
-                                        <li><a href="#">Configuración</a></li>
-                                        <li><a href="../HTML/reclamaciones.php">Enviar Comentarios</a></li>
-                                        <li><a href="../PHP/LogOut.php">Cerrar sesión</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-house-user" style="padding: 5px"></i>    Mi Cuenta</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-wallet" style="padding: 5px"></i>    Billetera</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-gear" style="padding: 5px"></i>    Configuración</a></li>
+                                        <li><a href="../HTML/reclamaciones.php"><i class="fa-solid fa-comment-dots" style="padding: 5px"></i>    Enviar Comentarios</a></li>
+                                        <li><a href="../PHP/LogOut.php"><i class="fa-solid fa-arrow-right-from-bracket" style="padding: 5px"></i>    Cerrar sesión</a></li>
                                     </ul>
                                 </div>
 
@@ -151,16 +154,16 @@ session_start();
 
                                 // Aquí puedes mostrar otros contenidos específicos para usuarios autenticados
                                 // Mostrar el menú desplegable si el usuario ha iniciado sesión
-                                echo '<select id="user-option" style="display: none;">';
-                                echo '<option value="my-account">Mi Cuenta</option>';
-                                echo '<option value="my-account">Billetera</option>';
-                                echo '<option value="support">Soporte</option>';
-                                echo '<option value="profile-settings">Configuración del perfil</option>';
-                                echo '<option value="send-comments">Enviar Comentarios</option>';
-                                echo '</select>';
+                                // echo '<select id="user-option" style="display: none;">';
+                                // echo '<option value="my-account">Mi Cuenta</option>';
+                                // echo '<option value="my-account">Billetera</option>';
+                                // echo '<option value="support">Soporte</option>';
+                                // echo '<option value="profile-settings">Configuración del perfil</option>';
+                                // echo '<option value="send-comments">Enviar Comentarios</option>';
+                                // echo '</select>';
                             } else {
                                 // El usuario es un invitado
-                                echo "<h2>Bienvenido,<br> invitado</h2>";
+                                echo "<h2 style='margin: 0;'>Bienvenido,<br> invitado</h2>";
                                 echo '<i class="fa-solid fa-user"></i>';
                             }
                             ?>
