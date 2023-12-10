@@ -5,10 +5,6 @@
     color: black;
 }
 
-main {
-    padding-top: 122px;
-}
-
 /*Header*/
 header {
     position: fixed;
@@ -233,7 +229,6 @@ header {
 
 .container-icon {
     position: relative;
-   
 }
 
 .count-products {
@@ -443,3 +438,30 @@ hr {
 }
 /* Estilos generales para el botón de pago */
 /* Puedes personalizar más estilos según tus preferencias de diseño */
+
+/* Menú desplegable */
+
+#user-options {
+    position: absolute;
+    position: absolute; 
+    top: 70px; 
+    left: -60px; 
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+}
+
+#user-options li {
+    padding: 10px;
+    font-size: 16px;
+    list-style: none;
+}
+
+#user-options li a {
+    text-decoration: none;
+}
+
+#user-options li a:hover {
+    color: #de9842;
+}

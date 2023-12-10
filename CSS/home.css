@@ -6,8 +6,8 @@ header{
 	z-index: 9;
 }
 
-main{
-	padding-top: 175px;
+main {
+	padding-top: 180px;
 }
 /*CAMBIOS HEADER FIJO */
 
@@ -105,7 +105,7 @@ html {
 	display: flex;
 	gap: 1rem;
 	cursor: pointer;
-
+	align-items: center;
 }
 
 .container-user .fa-user {

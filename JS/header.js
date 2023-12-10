@@ -1,6 +1,6 @@
 // programacion del carrito de compra 
 document.addEventListener('DOMContentLoaded', function () {
-    const btnCart = document.querySelector('.container-cart-icon');
+    const btnCart = document.querySelector('.btn-cart-icon');
     const containerCartProducts = document.querySelector('.container-cart-products');
 
 

@@ -1,6 +1,6 @@
 // programacion del movimiento de promociones 
 document.addEventListener('DOMContentLoaded', function () {
-    const btnCart = document.querySelector('.container-cart-icon');
+    const btnCart = document.querySelector('.btn-cart-icon');
     const containerCartProducts = document.querySelector('.container-cart-products');
     const cartInfo = document.querySelector('.cart-product');
     const rowProduct = document.querySelector('.row-product');
