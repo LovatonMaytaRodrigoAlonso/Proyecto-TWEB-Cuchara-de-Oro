@@ -83,6 +83,7 @@ $conexion = Conexion();
                 },
                 success: function(response) {
                     alert('Se ha actualizado el estado correctamente.');
+                    location.reload();
                 }
             });
         });
