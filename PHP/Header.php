@@ -145,7 +145,7 @@ session_start();
                                         <li><a href="#"><i class="fa-solid fa-house-user" style="padding: 5px"></i>    Mi Cuenta</a></li>
                                         <li><a href="#"><i class="fa-solid fa-wallet" style="padding: 5px"></i>    Billetera</a></li>
                                         <li><a href="#"><i class="fa-solid fa-gear" style="padding: 5px"></i>    Configuración</a></li>
-                                        <li><a href="../HTML/reclamaciones.php"><i class="fa-solid fa-comment-dots" style="padding: 5px"></i>    Enviar Comentarios</a></li>
+                                        <li><a href="../HTML/reclamaciones.php" style="display: flex; justify-content: space-between; align-items: center;"><i class="fa-solid fa-comment-dots" style="padding: 5px"></i><p style="padding-left: 5px;">    Enviar Comentarios</p></a></li>
                                         <li><a href="../PHP/LogOut.php"><i class="fa-solid fa-arrow-right-from-bracket" style="padding: 5px"></i>    Cerrar sesión</a></li>
                                     </ul>
                                 </div>

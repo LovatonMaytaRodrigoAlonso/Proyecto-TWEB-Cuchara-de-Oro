@@ -466,3 +466,6 @@ hr {
     color: #de9842;
 }
 
+#user-options li a p:hover {
+    color: #de9842;
+}

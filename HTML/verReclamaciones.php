@@ -72,7 +72,7 @@ $conexion = Conexion();
 
     for (let i = 0; i < checkButton.length; i++) {
         checkButton[i].addEventListener('click', function() {
-            let id = $(this).closest('tr').find('td[data-id]').data('id');
+            let id = $(this).closest('tr').find('td[data-id]').data('id'); //Obtengo el id de la fila a traves del atributo data-id
 
             $.ajax({
                 url: '../PHP/ProcesoReclamaciones.php',
@@ -83,7 +83,7 @@ $conexion = Conexion();
                 },
                 success: function(response) {
                     alert('Se ha actualizado el estado correctamente.');
-                    location.reload();
+                    location.reload(); //Recarga la página
                 }
             });
         });
@@ -102,12 +102,12 @@ $conexion = Conexion();
                 },
                 success: function(evidencia_img) {
                     alert('Imagen obtenida con éxito.');
-                    var downloadLink = document.createElement('a');
-                    downloadLink.href = evidencia_img;
-                    downloadLink.download = '';
-                    document.body.appendChild(downloadLink);
-                    downloadLink.click();
-                    document.body.removeChild(downloadLink);
+                    var downloadLink = document.createElement('a'); //Creo un elemento <a>
+                    downloadLink.href = evidencia_img; //Le asigno el atributo href
+                    downloadLink.download = ''; //Le asigno el atributo download
+                    document.body.appendChild(downloadLink); //Agrego el link al final del body
+                    downloadLink.click(); //Simulo el click en la etiqueta a
+                    document.body.removeChild(downloadLink); //Elimino el link del body
                 }
             });
         });
