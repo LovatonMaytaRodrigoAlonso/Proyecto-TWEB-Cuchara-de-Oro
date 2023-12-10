@@ -12,7 +12,7 @@ if (isset($_POST['registrar'])) {
         $name = mysqli_real_escape_string($con, $_POST['name']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
-        $fotoDefecto = '../evidencias/FotoUsuario/F0t0Defecto.jpeg';
+        $fotoDefecto = '../evidencias/FotoUsuario/default.jpg';
 
         // Comprobar si se ha seleccionado una imagen
         if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {

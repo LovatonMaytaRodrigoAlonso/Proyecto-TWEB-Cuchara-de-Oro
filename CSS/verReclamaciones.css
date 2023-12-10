@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #888;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+table th {
+    background-color: #de9842; 
+    color: #000;
+    padding: 10px 20px;
+}
+
+.button-download, .button-check {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button-download i, .button-check i {
+    color: #956711;
+    font-size: 20px;
+}
+
+.button-download:hover i, .button-check:hover i {
+    color: #de9842;
+    font-size: 25px;
+}
+
+table th, table td {
+    width: 100px; 
+}
+
+table td {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 10px;
+    text-align: center;
+}

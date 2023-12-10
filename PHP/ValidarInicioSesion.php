@@ -39,6 +39,12 @@ if (isset($_POST['acceder'])) {
             $_SESSION['email'] = $email;
             $_SESSION['name'] = obtenerNombreUsuario($conexion, $email);
 
+            if ($email == 'Admin@cdo.com') {
+                $_SESSION['admin'] = true;
+            } else {
+                $_SESSION['admin'] = false;
+            }
+
             // Obtén la imagen del usuario y guárdala en $_SESSION['user_image'] si está disponible en la base de datos
             $imagenUsuario = obtenerImagenUsuario($conexion, $email); // Reemplaza 'obtenerImagenUsuario'
             if ($imagenUsuario) {

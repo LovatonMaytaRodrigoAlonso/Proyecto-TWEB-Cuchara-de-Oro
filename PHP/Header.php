@@ -19,6 +19,7 @@ session_start();
         <link rel="stylesheet" href="../CSS/nosotros.css">
         <link rel="stylesheet" href="../CSS/promociones.css">
         <link rel="stylesheet" href="../CSS/FAQ.css">
+        <link rel="stylesheet" href="../CSS/verReclamaciones.css">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -27,6 +28,10 @@ session_start();
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">		
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
         <script src="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" crossorigin="anonymous"></script>
+
+        <!--Iconos-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <script>
             // Espera a que el documento esté completamente cargado
             document.addEventListener("DOMContentLoaded", function () {
@@ -131,7 +136,7 @@ session_start();
                                         $uploadedFile = '';
                                     }
                                     ?>
-                                    <img src="<?php echo $_SESSION['user_image']; ?>" width="50" height="70">
+                                    <img src="<?php echo $_SESSION['user_image']; ?>" width="60">
                                     <br>
                                     <?php
                                     echo '<a href="../PHP/LogOut.php">Cerrar sesión</a>';
@@ -202,6 +207,12 @@ session_start();
                         <li><a href="../HTML#titulo-bebidas">Bebidas</a></li>
                         <li><a href="../HTML/Promociones.php">Promociones</a></li>
                         <li><a href="../HTML/Nosotros.php">Nosotros</a></li>
+                        <?php 
+                            if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
+                                echo '<li><a href="../HTML/verReclamaciones.php">Ver Reclamaciones</a></li>';
+                                echo '<script>console.log("El usuario es un administrador")</script>';
+                            }
+                        ?>
                         <li><a href="#">Más</a></li>
                     </ul>
 
