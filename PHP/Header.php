@@ -202,7 +202,7 @@ session_start();
 
                         <div class="cart-total hidden">
                             <button class="btn">
-                                <li><a href="../HTML/pago.php">PAGAR</a></li>
+                                <li><a href="#">PAGAR</a></li>
 
                             </button>
                             <h3>Total:</h3>

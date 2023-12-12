@@ -35,7 +35,7 @@
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre0; ?></h2>
-                        <p class="price"><?php echo $precio0; ?></p>
+                        <p class="price">$<?php echo $precio0; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre1; ?></h2>
-                        <p class="price"><?php echo $precio1; ?></p>
+                        <p class="price">$<?php echo $precio1; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
@@ -327,11 +327,8 @@
     </div>
 </main>
 
-<?php include_once '../PHP/Footer.php'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-</body>
-
 <script>
     const btnCart = document.querySelector('.btn-cart-icon');
     const containerCartProducts = document.querySelector('.container-cart-products');
@@ -478,11 +475,8 @@
     let btnPagar = document.querySelector('.btn');
 
     btnPagar.addEventListener('click', function() {
-        alert('Se ha realizado el pago correctamente.');
-        console.log('Se ha realizado el pago correctamente.');
-
         $.ajax({
-            url: '../PHP/ProcesoPedidos.php',
+            url: '../HTML/pago.php',
             type: 'post',
             data: {
                 'carrito': allProducts,
@@ -490,9 +484,11 @@
             },
             success: function(response) {
                 alert('Se han enviado los datos correctamente.');
+                window.location.href = '../HTML/pago.php';
             }
         });
     });
 </script>
-
+<?php include_once '../PHP/Footer.php'; ?>
+</body>
 </html>
