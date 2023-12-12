@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carrito de compra  | Cuchara de Oro</title> 
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/x-icon" href="../Imagenes/Cuchara de Oro circulo.png">
-        <link rel="stylesheet" href="../CSS/reclamaciones.css">
 
-        <link rel="stylesheet" href="../CSS/footer1.css"> 
-        <link rel="stylesheet" href="../CSS/home.css">
-    </head>
-    <body>
-        <header>
-            <h1>Carrito de compras</h1>
-            <h2>Cuchara de Oro</h2>
-        </header>
-        <form>
-            <main id="mainContainer"> </main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compra | Cuchara de Oro</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="../Imagenes/Cuchara de Oro circulo.png">
+    <link rel="stylesheet" href="../CSS/reclamaciones.css">
+
+    <link rel="stylesheet" href="../CSS/footer1.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+</head>
+
+<body>
+    <header>
+        <h1>Carrito de compras</h1>
+        <h2>Cuchara de Oro</h2>
+    </header>
+        <main id="mainContainer"> </main>
+
+        <main>
+            <h2>Datos Personales</h2>
+
+            <form method="post" action="../PHP/ProcesoPedidos.php">
                 
-            
-            
-
-            <main>
-                <h2>Datos Personales</h2>
-
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="nombre">Apellido:</label>
-                <input type="text" id="apellido" name="nombre" required>
-
                 <label for="direccion">Dirección:</label>
                 <input type="text" id="direccion" name="direccion" required>
 
-                <label for="distrito">Distrito:</label>
-                <input type="text" id="distrito" name="distrito" required>
-
-                <label for="provincia">Provincia:</label>
-                <input type="text" id="provincia" name="provincia" required>
+                <label for="fono">Número de teléfono:</label>
+                <input type="text" id="fono" name="fono" required>
 
                 <h2>Método de Pago</h2>
                 <input type="radio" id="yape" name="metodoPago" value="yape" required>
@@ -47,24 +38,28 @@
                 <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
                 <label for="tarjeta">Tarjeta de Crédito</label>
 
-                <center>
-                    <button class="btn_terminar" type="button" onclick="procesarPago()">Procesar pago</button>
-                </center>     
-            </main>    
-        </form> 
-        <script>
-            function procesarPago() {
-                var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+                <input type="hidden" name="accion" value="add">
+                <button type="submit" value="PagarPedido">Pagar</button>
+            </form>
 
-                if (metodoPago === "yape") {
-                    window.location.href = "../HTML/yape.php";
-                } else if (metodoPago === "tarjeta") {
-                    window.location.href = "../HTML/tarjeta.php";
-                } else {
-                    alert("Selecciona un método de pago");
-                }
+            <!-- <center>
+                <button class="btn_terminar" type="button" onclick="procesarPago()">Procesar pago</button>
+            </center> -->
+        </main>
+    <script>
+        function procesarPago() {
+            var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+
+            if (metodoPago === "yape") {
+                window.location.href = "../HTML/yape.php";
+            } else if (metodoPago === "tarjeta") {
+                window.location.href = "../HTML/tarjeta.php";
+            } else {
+                alert("Selecciona un método de pago");
             }
-        </script>
-        <script src="../JS/pagocarrito.js"></script>
-    </body>
+        }
+    </script>
+    <script src="../JS/pagocarrito.js"></script>
+</body>
+
 </html>

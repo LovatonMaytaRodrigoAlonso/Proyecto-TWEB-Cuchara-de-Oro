@@ -1,88 +1,88 @@
 // programacion del carrito de compra 
 document.addEventListener('DOMContentLoaded', function () {
-    const btnCart = document.querySelector('.btn-cart-icon');
-    const containerCartProducts = document.querySelector('.container-cart-products');
+    // const btnCart = document.querySelector('.btn-cart-icon');
+    // const containerCartProducts = document.querySelector('.container-cart-products');
 
 
-    btnCart.addEventListener('click', () => {
-        containerCartProducts.classList.toggle('hidden-cart');
+    // btnCart.addEventListener('click', () => {
+    //     containerCartProducts.classList.toggle('hidden-cart');
 
-    });
+    // });
 
-    /* ========================= */
-    const cartInfo = document.querySelector('.cart-product');
-    const rowProduct = document.querySelector('.row-product');
+    // /* ========================= */
+    // const cartInfo = document.querySelector('.cart-product');
+    // const rowProduct = document.querySelector('.row-product');
 
-    // Lista de todos los contenedores de productos
-    const productsList = document.querySelector('.container-menu');
+    // // Lista de todos los contenedores de productos
+    // const productsList = document.querySelector('.container-menu');
 
-    // Variable de arreglos de Productos
-    let allProducts = [];
+    // // Variable de arreglos de Productos
+    // let allProducts = [];
 
-    const valorTotal = document.querySelector('.total-pagar');
+    // const valorTotal = document.querySelector('.total-pagar');
 
-    const countProducts = document.querySelector('#contador-productos');
+    // const countProducts = document.querySelector('#contador-productos');
 
-    const cartEmpty = document.querySelector('.cart-empty');
-    const cartTotal = document.querySelector('.cart-total');
+    // const cartEmpty = document.querySelector('.cart-empty');
+    // const cartTotal = document.querySelector('.cart-total');
 
-//agregar articulos al carrito
-    productsList.addEventListener('click', e => {
-        if (e.target.classList.contains('btn-add-cart')) {
-            const product = e.target.parentElement;
-
-
-            const infoProduct = {
-                quantity: 1,
-                title: product.querySelector('h2').textContent,
-                price: product.querySelector('p').textContent,
-            };
-
-            const exits = allProducts.some(
-                    product => product.title === infoProduct.title
-            );
+    // //agregar articulos al carrito
+    // productsList.addEventListener('click', e => {
+    //     if (e.target.classList.contains('btn-add-cart')) {
+    //         const product = e.target.parentElement;
 
 
+    //         const infoProduct = {
+    //             quantity: 1,
+    //             title: product.querySelector('h2').textContent,
+    //             price: product.querySelector('p').textContent,
+    //         };
 
-            // condicion de existencia de algun plato para su incremento
-            if (exits) {
-                const products = allProducts.map(product => {
-                    if (product.title === infoProduct.title) {
-                        product.quantity++;
-                        return product;
-                    } else {
-                        return product;
-                    }
-                });
-                allProducts = [...products];
-            } else {
-                allProducts = [...allProducts, infoProduct];
-            }
-
-            showHTML();
-            
-            localStorage.setItem('products', JSON.stringify(allProducts));
-
-        }
-
-    });
+    //         const exits = allProducts.some(
+    //             product => product.title === infoProduct.title
+    //         );
 
 
-    // el evento servira para eliminar un plato del carrito 
-    rowProduct.addEventListener('click', e => {
-        if (e.target.classList.contains('icon-close')) {
-            const product = e.target.parentElement;
-            const title = product.querySelector('p').textContent;
 
-            allProducts = allProducts.filter(
-                    product => product.title !== title
-            );
+    //         // condicion de existencia de algun plato para su incremento
+    //         if (exits) {
+    //             const products = allProducts.map(product => {
+    //                 if (product.title === infoProduct.title) {
+    //                     product.quantity++;
+    //                     return product;
+    //                 } else {
+    //                     return product;
+    //                 }
+    //             });
+    //             allProducts = [...products];
+    //         } else {
+    //             allProducts = [...allProducts, infoProduct];
+    //         }
 
-            console.log(allProducts);
+    //         showHTML();
 
-            showHTML();
-        }
-    });
+    //         localStorage.setItem('products', JSON.stringify(allProducts));
+
+    //     }
+
+    // });
+
+
+    // // el evento servira para eliminar un plato del carrito 
+    // rowProduct.addEventListener('click', e => {
+    //     if (e.target.classList.contains('icon-close')) {
+    //         const product = e.target.parentElement;
+    //         const title = product.querySelector('p').textContent;
+
+    //         allProducts = allProducts.filter(
+    //             product => product.title !== title
+    //         );
+
+    //         console.log(allProducts);
+
+    //         showHTML();
+    //     }
+    // });
 
     // Funcion para mostrar  HTML
     const showHTML = () => {
@@ -143,42 +143,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//Mantener el menú de navegación
+    //Mantener el menú de navegación
 
 
-// movilizar los platos y bebidas
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#titulo-menu').addEventListener('click', () => {
-        window.scrollTo({
-            top: 450,
-            behavior: "smooth"
+    // movilizar los platos y bebidas
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#titulo-menu').addEventListener('click', () => {
+            window.scrollTo({
+                top: 450,
+                behavior: "smooth"
+            });
+        });
+
+        document.querySelector('#IrBebidas').addEventListener('click', () => {
+            window.scrollTo({
+                top: 3650,
+                behavior: "smooth"
+            });
         });
     });
+    document.getElementById("btn_menu").addEventListener("click", mostrar_menu);
 
-    document.querySelector('#IrBebidas').addEventListener('click', () => {
-        window.scrollTo({
-            top: 3650,
-            behavior: "smooth"
-        });
-    });
-});
-document.getElementById("btn_menu").addEventListener("click", mostrar_menu);
+    document.getElementById("back_menu").addEventListener("click", ocultar_menu);
 
-document.getElementById("back_menu").addEventListener("click", ocultar_menu);
+    nav = document.getElementById("nav");
+    background_menu = document.getElementById("back_menu");
 
-nav = document.getElementById("nav");
-background_menu = document.getElementById("back_menu");
+    function mostrar_menu() {
 
-function mostrar_menu() {
+        nav.style.right = "0px";
+        background_menu.style.display = "block";
+    }
 
-    nav.style.right = "0px";
-    background_menu.style.display = "block";
-}
+    function ocultar_menu() {
 
-function ocultar_menu() {
-
-    nav.style.right = "-250px";
-    background_menu.style.display = "none";
-}
-
+        nav.style.right = "-250px";
+        background_menu.style.display = "none";
+    }
 });

@@ -12,11 +12,26 @@ function obtenerImagenUsuario($con, $email) {
         }
     }
 }
+class ValidarInicioSesion{
+public static function guardarIdClienteEnSesion($con, $email) {
+        $sql = "SELECT CLI_ID FROM cliente WHERE CLI_Correo = ?";
+        if ($statement = mysqli_prepare($con, $sql)) {
+            mysqli_stmt_bind_param($statement, "s", $email);
+            if (mysqli_stmt_execute($statement)) {
+                mysqli_stmt_bind_result($statement, $idCliente);
+                if (mysqli_stmt_fetch($statement)) {
+                    $_SESSION['cliente_id'] = $idCliente;
+                }
+            }
+        }
+    }
+}
 
 include_once '../HTML/Consultas.php';
 
 // Inicia la sesión
 session_start();
+
 
 if (isset($_POST['acceder'])) {
     $email = $_POST['email'];
@@ -44,7 +59,8 @@ if (isset($_POST['acceder'])) {
             } else {
                 $_SESSION['admin'] = false;
             }
-
+            
+            ValidarInicioSesion::guardarIdClienteEnSesion($conexion, $email);
             // Obtén la imagen del usuario y guárdala en $_SESSION['user_image'] si está disponible en la base de datos
             $imagenUsuario = obtenerImagenUsuario($conexion, $email); // Reemplaza 'obtenerImagenUsuario'
             if ($imagenUsuario) {
@@ -61,5 +77,7 @@ if (isset($_POST['acceder'])) {
     }
 }
 ?>
+
+            
 
 
