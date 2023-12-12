@@ -35,7 +35,7 @@
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre0; ?></h2>
-                        <p class="price"><?php echo $precio0; ?></p>
+                        <p class="price">$<?php echo $precio0; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre1; ?></h2>
-                        <p class="price"><?php echo $precio1; ?></p>
+                        <p class="price">$<?php echo $precio1; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>

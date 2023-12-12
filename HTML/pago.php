@@ -18,7 +18,7 @@
         <h1>Carrito de compras</h1>
         <h2>Cuchara de Oro</h2>
     </header>
-        <main id="mainContainer"> </main>
+        <main id="mainContainer" > </main>
 
         <main>
             <h2>Datos Personales</h2>
@@ -38,13 +38,12 @@
                 <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta" required>
                 <label for="tarjeta">Tarjeta de Crédito</label>
 
-                <input type="hidden" name="accion" value="add">
-                <button type="submit" value="PagarPedido">Pagar</button>
+                
             </form>
 
-            <!-- <center>
-                <button class="btn_terminar" type="button" onclick="procesarPago()">Procesar pago</button>
-            </center> -->
+             <center>
+                <button class="btn_terminar" type="submit" onclick="procesarPago()">Procesar pago</button>
+            </center> 
         </main>
     <script>
         function procesarPago() {
