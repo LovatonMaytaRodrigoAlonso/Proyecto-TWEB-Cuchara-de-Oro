@@ -482,13 +482,12 @@
         console.log('Se ha realizado el pago correctamente.');
 
         $.ajax({
-            url: '../PHP/ProcesoPedido.php',
+            url: '../PHP/ProcesoPedidos.php',
             type: 'post',
-            data: JSON.stringify({
+            data: {
                 'carrito': allProducts,
                 'action': 'enviarCarrito'
-            }),
-            contentType: "application/json; charset=utf-8",
+            },
             success: function(response) {
                 alert('Se han enviado los datos correctamente.');
             }

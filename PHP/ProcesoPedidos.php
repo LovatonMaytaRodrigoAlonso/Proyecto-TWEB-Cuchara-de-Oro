@@ -3,10 +3,9 @@
 include_once '../PHP/conexionBD.php';
 
 $conexion = Conexion();
-$data = json_decode(file_get_contents('php://input'), true);
 
-if (isset($data['action']) && $data['action'] == 'enviarCarrito') {
-    $carrito = ($data['carrito']);
+if (isset($_POST['action']) && $_POST['action'] == 'enviarCarrito') {
+    $carrito = ($_POST['carrito']);
 
     if (isset($_POST["accion"])) {
         $accion = $_POST["accion"];

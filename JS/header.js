@@ -1,88 +1,88 @@
 // programacion del carrito de compra 
 document.addEventListener('DOMContentLoaded', function () {
-    const btnCart = document.querySelector('.btn-cart-icon');
-    const containerCartProducts = document.querySelector('.container-cart-products');
+    // const btnCart = document.querySelector('.btn-cart-icon');
+    // const containerCartProducts = document.querySelector('.container-cart-products');
 
 
-    btnCart.addEventListener('click', () => {
-        containerCartProducts.classList.toggle('hidden-cart');
+    // btnCart.addEventListener('click', () => {
+    //     containerCartProducts.classList.toggle('hidden-cart');
 
-    });
+    // });
 
-    /* ========================= */
-    const cartInfo = document.querySelector('.cart-product');
-    const rowProduct = document.querySelector('.row-product');
+    // /* ========================= */
+    // const cartInfo = document.querySelector('.cart-product');
+    // const rowProduct = document.querySelector('.row-product');
 
-    // Lista de todos los contenedores de productos
-    const productsList = document.querySelector('.container-menu');
+    // // Lista de todos los contenedores de productos
+    // const productsList = document.querySelector('.container-menu');
 
-    // Variable de arreglos de Productos
-    let allProducts = [];
+    // // Variable de arreglos de Productos
+    // let allProducts = [];
 
-    const valorTotal = document.querySelector('.total-pagar');
+    // const valorTotal = document.querySelector('.total-pagar');
 
-    const countProducts = document.querySelector('#contador-productos');
+    // const countProducts = document.querySelector('#contador-productos');
 
-    const cartEmpty = document.querySelector('.cart-empty');
-    const cartTotal = document.querySelector('.cart-total');
+    // const cartEmpty = document.querySelector('.cart-empty');
+    // const cartTotal = document.querySelector('.cart-total');
 
-    //agregar articulos al carrito
-    productsList.addEventListener('click', e => {
-        if (e.target.classList.contains('btn-add-cart')) {
-            const product = e.target.parentElement;
-
-
-            const infoProduct = {
-                quantity: 1,
-                title: product.querySelector('h2').textContent,
-                price: product.querySelector('p').textContent,
-            };
-
-            const exits = allProducts.some(
-                product => product.title === infoProduct.title
-            );
+    // //agregar articulos al carrito
+    // productsList.addEventListener('click', e => {
+    //     if (e.target.classList.contains('btn-add-cart')) {
+    //         const product = e.target.parentElement;
 
 
+    //         const infoProduct = {
+    //             quantity: 1,
+    //             title: product.querySelector('h2').textContent,
+    //             price: product.querySelector('p').textContent,
+    //         };
 
-            // condicion de existencia de algun plato para su incremento
-            if (exits) {
-                const products = allProducts.map(product => {
-                    if (product.title === infoProduct.title) {
-                        product.quantity++;
-                        return product;
-                    } else {
-                        return product;
-                    }
-                });
-                allProducts = [...products];
-            } else {
-                allProducts = [...allProducts, infoProduct];
-            }
-
-            showHTML();
-
-            localStorage.setItem('products', JSON.stringify(allProducts));
-
-        }
-
-    });
+    //         const exits = allProducts.some(
+    //             product => product.title === infoProduct.title
+    //         );
 
 
-    // el evento servira para eliminar un plato del carrito 
-    rowProduct.addEventListener('click', e => {
-        if (e.target.classList.contains('icon-close')) {
-            const product = e.target.parentElement;
-            const title = product.querySelector('p').textContent;
 
-            allProducts = allProducts.filter(
-                product => product.title !== title
-            );
+    //         // condicion de existencia de algun plato para su incremento
+    //         if (exits) {
+    //             const products = allProducts.map(product => {
+    //                 if (product.title === infoProduct.title) {
+    //                     product.quantity++;
+    //                     return product;
+    //                 } else {
+    //                     return product;
+    //                 }
+    //             });
+    //             allProducts = [...products];
+    //         } else {
+    //             allProducts = [...allProducts, infoProduct];
+    //         }
 
-            console.log(allProducts);
+    //         showHTML();
 
-            showHTML();
-        }
-    });
+    //         localStorage.setItem('products', JSON.stringify(allProducts));
+
+    //     }
+
+    // });
+
+
+    // // el evento servira para eliminar un plato del carrito 
+    // rowProduct.addEventListener('click', e => {
+    //     if (e.target.classList.contains('icon-close')) {
+    //         const product = e.target.parentElement;
+    //         const title = product.querySelector('p').textContent;
+
+    //         allProducts = allProducts.filter(
+    //             product => product.title !== title
+    //         );
+
+    //         console.log(allProducts);
+
+    //         showHTML();
+    //     }
+    // });
 
     // Funcion para mostrar  HTML
     const showHTML = () => {

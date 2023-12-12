@@ -23,7 +23,7 @@
         <main>
             <h2>Datos Personales</h2>
 
-            <form method="post" action="../PHP/ProcesoPedido.php">
+            <form method="post" action="../PHP/ProcesoPedidos.php">
                 
                 <label for="direccion">Dirección:</label>
                 <input type="text" id="direccion" name="direccion" required>
