@@ -4,7 +4,6 @@ const storedProducts = localStorage.getItem('products');
 
 // Verifica si hay datos almacenados
 if (storedProducts) {
-    alert("carrito");
     // Convierte la cadena a un arreglo
     const allProducts = JSON.parse(storedProducts);
 

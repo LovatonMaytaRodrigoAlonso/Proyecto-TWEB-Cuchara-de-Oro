@@ -9,19 +9,23 @@ $conexion = Conexion();
     <main>
         <h1>Reclamaciones Pendientes</h1>
         <table id="tbl_reclamaciones">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Dirección</th>
+                    <th>Documento</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Bien Adquirido</th>
+                    <th>Importe</th>
+                    <th>Evidencia</th>
+                    <th>Comentario</th>
+                    <th>Estado</th>
+                    <th>Solucionar</th>
+                </tr>
+            </thead>
             <tr>
-                <th>ID</th>
-                <th>Cliente</th>
-                <th>Dirección</th>
-                <th>Documento</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Bien Adquirido</th>
-                <th>Importe</th>
-                <th>Evidencia</th>
-                <th>Comentario</th>
-                <th>Estado</th>
-                <th>Solucionar</th>
                 <div class="content-table">
                     <?php
                     $datos = obtenerDatos($conexion);

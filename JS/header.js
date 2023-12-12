@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartEmpty = document.querySelector('.cart-empty');
     const cartTotal = document.querySelector('.cart-total');
 
-//agregar articulos al carrito
+    //agregar articulos al carrito
     productsList.addEventListener('click', e => {
         if (e.target.classList.contains('btn-add-cart')) {
             const product = e.target.parentElement;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             const exits = allProducts.some(
-                    product => product.title === infoProduct.title
+                product => product.title === infoProduct.title
             );
 
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             showHTML();
-            
+
             localStorage.setItem('products', JSON.stringify(allProducts));
 
         }
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const title = product.querySelector('p').textContent;
 
             allProducts = allProducts.filter(
-                    product => product.title !== title
+                product => product.title !== title
             );
 
             console.log(allProducts);
@@ -143,42 +143,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//Mantener el menú de navegación
+    //Mantener el menú de navegación
 
 
-// movilizar los platos y bebidas
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#titulo-menu').addEventListener('click', () => {
-        window.scrollTo({
-            top: 450,
-            behavior: "smooth"
+    // movilizar los platos y bebidas
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#titulo-menu').addEventListener('click', () => {
+            window.scrollTo({
+                top: 450,
+                behavior: "smooth"
+            });
+        });
+
+        document.querySelector('#IrBebidas').addEventListener('click', () => {
+            window.scrollTo({
+                top: 3650,
+                behavior: "smooth"
+            });
         });
     });
+    document.getElementById("btn_menu").addEventListener("click", mostrar_menu);
 
-    document.querySelector('#IrBebidas').addEventListener('click', () => {
-        window.scrollTo({
-            top: 3650,
-            behavior: "smooth"
-        });
-    });
-});
-document.getElementById("btn_menu").addEventListener("click", mostrar_menu);
+    document.getElementById("back_menu").addEventListener("click", ocultar_menu);
 
-document.getElementById("back_menu").addEventListener("click", ocultar_menu);
+    nav = document.getElementById("nav");
+    background_menu = document.getElementById("back_menu");
 
-nav = document.getElementById("nav");
-background_menu = document.getElementById("back_menu");
+    function mostrar_menu() {
 
-function mostrar_menu() {
+        nav.style.right = "0px";
+        background_menu.style.display = "block";
+    }
 
-    nav.style.right = "0px";
-    background_menu.style.display = "block";
-}
+    function ocultar_menu() {
 
-function ocultar_menu() {
-
-    nav.style.right = "-250px";
-    background_menu.style.display = "none";
-}
-
+        nav.style.right = "-250px";
+        background_menu.style.display = "none";
+    }
 });

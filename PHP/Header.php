@@ -47,7 +47,8 @@ session_start();
         });
     </script>
     <script src="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" crossorigin="anonymous"></script>
-    <script src="../JS/header.js">
+    <!-- <script src="../JS/header.js"></script> -->
+    <script>
         // Espera a que el documento esté completamente cargado
         document.addEventListener('DOMContentLoaded', function() {
             // Obtén el elemento con la clase "fa-solid fa-basket-shopping"
@@ -198,7 +199,7 @@ session_start();
 
                         <div class="cart-total hidden">
                             <button class="btn">
-                                <li><a href="../HTML/pago.php">PAGAR</a></li>
+                                <li><a href="../HTML/pago.php" target="_blank">PAGAR</a></li>
 
                             </button>
                             <h3>Total:</h3>

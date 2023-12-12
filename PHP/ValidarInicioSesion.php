@@ -31,11 +31,14 @@ if (isset($_POST['acceder'])) {
         $email = mysqli_real_escape_string($conexion, $email);
         $password = mysqli_real_escape_string($conexion, $password);
 
-        $consulta = "SELECT * FROM cliente WHERE CLI_Correo='$email' AND CLI_Password='$password'";
+        $consulta = "SELECT CLI_ID FROM cliente WHERE CLI_Correo='$email' AND CLI_Password='$password'";
         $resultado = mysqli_query($conexion, $consulta);
 
         $filas = mysqli_num_rows($resultado);
         if ($filas) {
+            $usuario = mysqli_fetch_assoc($resultado);
+            $_SESSION['id'] = $usuario['CLI_ID']; // Almacena el ID del cliente en la variable de sesión
+            
             $_SESSION['email'] = $email;
             $_SESSION['name'] = obtenerNombreUsuario($conexion, $email);
 
