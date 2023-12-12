@@ -4,7 +4,7 @@
     $hostname = "localhost";
     $username = "root";
     $password = "";
-    $database = "restaurante";  
+    $database = "cuchara_de_oro";  
     $port = "3306";
   
     global $con;
@@ -14,7 +14,3 @@
 }
 
 $conexion = Conexion();
-
-
-
-

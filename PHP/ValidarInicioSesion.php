@@ -12,11 +12,26 @@ function obtenerImagenUsuario($con, $email) {
         }
     }
 }
+class ValidarInicioSesion{
+public static function guardarIdClienteEnSesion($con, $email) {
+        $sql = "SELECT CLI_ID FROM cliente WHERE CLI_Correo = ?";
+        if ($statement = mysqli_prepare($con, $sql)) {
+            mysqli_stmt_bind_param($statement, "s", $email);
+            if (mysqli_stmt_execute($statement)) {
+                mysqli_stmt_bind_result($statement, $idCliente);
+                if (mysqli_stmt_fetch($statement)) {
+                    $_SESSION['cliente_id'] = $idCliente;
+                }
+            }
+        }
+    }
+}
 
 include_once '../HTML/Consultas.php';
 
 // Inicia la sesión
 session_start();
+
 
 if (isset($_POST['acceder'])) {
     $email = $_POST['email'];
@@ -31,14 +46,11 @@ if (isset($_POST['acceder'])) {
         $email = mysqli_real_escape_string($conexion, $email);
         $password = mysqli_real_escape_string($conexion, $password);
 
-        $consulta = "SELECT CLI_ID FROM cliente WHERE CLI_Correo='$email' AND CLI_Password='$password'";
+        $consulta = "SELECT * FROM cliente WHERE CLI_Correo='$email' AND CLI_Password='$password'";
         $resultado = mysqli_query($conexion, $consulta);
 
         $filas = mysqli_num_rows($resultado);
         if ($filas) {
-            $usuario = mysqli_fetch_assoc($resultado);
-            $_SESSION['id'] = $usuario['CLI_ID']; // Almacena el ID del cliente en la variable de sesión
-            
             $_SESSION['email'] = $email;
             $_SESSION['name'] = obtenerNombreUsuario($conexion, $email);
 
@@ -47,7 +59,8 @@ if (isset($_POST['acceder'])) {
             } else {
                 $_SESSION['admin'] = false;
             }
-
+            
+            ValidarInicioSesion::guardarIdClienteEnSesion($conexion, $email);
             // Obtén la imagen del usuario y guárdala en $_SESSION['user_image'] si está disponible en la base de datos
             $imagenUsuario = obtenerImagenUsuario($conexion, $email); // Reemplaza 'obtenerImagenUsuario'
             if ($imagenUsuario) {
@@ -64,5 +77,7 @@ if (isset($_POST['acceder'])) {
     }
 }
 ?>
+
+            
 
 

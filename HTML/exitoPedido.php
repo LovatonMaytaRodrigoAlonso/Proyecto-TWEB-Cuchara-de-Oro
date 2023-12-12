@@ -12,7 +12,7 @@
     <div>
         <h1>¡Felicitaciones!</h1>
         <p>Gracias por completar su pedido.</p>
-        <p>Para descargar su comprobante de pago, haga clic <a href="ruta_a_la_boleta">aquí</a>.</p>
+        <p>Para descargar su comprobante de pago, haga clic <a href="#" id="verFactura">aquí</a>.</p>
         <button>Volver al Inicio</button>
     </div>
 </body>
@@ -21,5 +21,15 @@
     document.querySelector('button').addEventListener('click', function() {
         window.location.href = "../HTML/home.php";
     });
+    
+    document.getElementById('verFactura').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Aquí debes proporcionar la URL correcta a tu script PHP que genera la factura
+    var urlFactura = '../PHP/Factura.php';
+
+    // Abrir la URL en una nueva pestaña
+    window.open(urlFactura, '_blank');
+});
 </script>
 </html>

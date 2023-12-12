@@ -130,6 +130,8 @@ session_start();
                             <?php
                             if (isset($_SESSION['name'])) {
                                 // El usuario ha iniciado sesión, muestra su nombre
+
+                                
                                 echo "<h2 style='margin: 0;'>Hola,<br> {$_SESSION['name']}</h2>";
 
                                 if (isset($_SESSION['user_image'])) {

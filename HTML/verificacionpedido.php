@@ -38,14 +38,28 @@
          </div> 
          <div class="actions">
             <button type="button" class="history">
-            <a href="../HTML/pago.php">Pedido</a></button> 
+            <a href="../HTML/pago.php">Pedido</a></button>
+             
             <button type="button" class="track">
             <a href="../HTML/index.php">Seguir comprando</a></button> 
+            <center><a href="#" id="verFactura">Ver Factura</a></center>
             </div> 
             </div> 
             </div>
   </main>   
 </body>
+<script>
+document.getElementById('verFactura').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Aquí debes proporcionar la URL correcta a tu script PHP que genera la factura
+    var urlFactura = '../PHP/Factura.php';
+
+    // Abrir la URL en una nueva pestaña
+    window.open(urlFactura, '_blank');
+});
+</script>
 </html>
+
 
 
