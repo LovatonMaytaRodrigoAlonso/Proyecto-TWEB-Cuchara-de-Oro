@@ -37,6 +37,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'enviarCarrito') {
     echo "No se pudo enviar el carrito";
 }
 
+header("Location: ../HTML/exitoPedido.php");
+
 function ObtenerIdComida($conexion, $nombre) {
     $sql = "SELECT COM_ID FROM comida WHERE COM_NOMBRE = '$nombre'";
     $resultado = mysqli_query($conexion, $sql);
