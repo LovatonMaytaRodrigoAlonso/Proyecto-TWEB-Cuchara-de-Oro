@@ -1,38 +1,37 @@
 <?php include_once '../PHP/Header.php'; ?>
 
-    <main>
-        <!--carrucel de imagenes-->
-        <div class="carruselg">
-            <a href="../HTML/Promociones.php">
-                <div class="carrusel carrusel-1">
-                    <img src="../Imagenes/Banner/1.png" alt="">
-                </div>
+<main>
+    <!--carrucel de imagenes-->
+    <div class="carruselg">
+        <a href="../HTML/Promociones.php">
+            <div class="carrusel carrusel-1">
+                <img src="../Imagenes/Banner/1.png" alt="">
+            </div>
 
-                <div class="carrusel carrusel-2">
-                    <img src="../Imagenes/Banner/2.png" alt="">
-                </div>
+            <div class="carrusel carrusel-2">
+                <img src="../Imagenes/Banner/2.png" alt="">
+            </div>
 
-                <div class="carrusel carrusel-3">
-                    <img src="../Imagenes/Banner/3.png" alt="">
-                </div>
-            </a>
-        </div>
+            <div class="carrusel carrusel-3">
+                <img src="../Imagenes/Banner/3.png" alt="">
+            </div>
+        </a>
+    </div>
 
 
-        <!--contenedor de las imagenes-->
-        <center>
-            <hr>
-            <h1 id="titulo-menu">MENÚ DEL DÍA </h1>
-            <hr>
-        </center>
-        <div class="container-menu">
-            <!--AJI DE POLLO-->
-            <div class="container-items">      
-                <div class="animate__animated animate__flipInX">
+    <!--contenedor de las imagenes-->
+    <center>
+        <hr>
+        <h1 id="titulo-menu">MENÚ DEL DÍA </h1>
+        <hr>
+    </center>
+    <div class="container-menu">
+        <!--AJI DE POLLO-->
+        <div class="animate__animated animate__bounceIn">
+            <div class="container-items">
                 <div class="item">
                     <figure>
-                        <img src="https://www.recetas-argentinas.com/base/stock/Recipe/61-image/61-image_web.jpg"
-                            alt="producto" />
+                        <img src="https://www.recetas-argentinas.com/base/stock/Recipe/61-image/61-image_web.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre0; ?></h2>
@@ -40,13 +39,10 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-                </div>                     
-                
-            <!--LOMO SALTADO-->
-                <div class="item">                
+                <!--LOMO SALTADO-->
+                <div class="item">
                     <figure>
-                        <img src="https://buenazo.cronosmedia.glr.pe/original/2022/06/20/62aea00d119a8801813a563b.jpg"
-                            alt="producto" />
+                        <img src="https://buenazo.cronosmedia.glr.pe/original/2022/06/20/62aea00d119a8801813a563b.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre1; ?></h2>
@@ -54,7 +50,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--ARROZ CON POLLO-->
+                <!--ARROZ CON POLLO-->
                 <div class="item">
                     <figure>
                         <img src="https://i.ytimg.com/vi/H6lgxgEWIs8/maxresdefault.jpg" alt="producto" />
@@ -65,11 +61,10 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--SECO DE CARNE-->
+                <!--SECO DE CARNE-->
                 <div class="item">
                     <figure>
-                        <img src="https://comidasperuanas.net/wp-content/uploads/2020/11/Seco-de-carne.jpg"
-                            alt="producto" />
+                        <img src="https://comidasperuanas.net/wp-content/uploads/2020/11/Seco-de-carne.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre3; ?></h2>
@@ -77,11 +72,10 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--TALLARINES VERDES-->
+                <!--TALLARINES VERDES-->
                 <div class="item">
                     <figure>
-                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/RIRWWA3V2JCMLI3DTMS375RPMU.png"
-                            alt="producto" />
+                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/RIRWWA3V2JCMLI3DTMS375RPMU.png" alt="producto" />
                     </figure>
                     <div class="info-product">
                         <h2><?php echo $nombre4; ?></h2>
@@ -89,7 +83,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--ANTICUCHOS-->
+                <!--ANTICUCHOS-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/Anticuchos-de-Corazón-Peruanos.jpg" alt="producto" />
@@ -100,7 +94,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--PICANTE DE CARNE-->
+                <!--PICANTE DE CARNE-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/Picante-de-carne.jpg" alt="producto" />
@@ -111,7 +105,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--CAU CAU-->
+                <!--CAU CAU-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/cau-cau.jpg" alt="producto" />
@@ -122,7 +116,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--CHANFAINITA-->
+                <!--CHANFAINITA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/Chanfainita.jpg" alt="producto" />
@@ -134,15 +128,16 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <center>
-                <hr>
-                <h1 id="titulo-marino"> MENÚ MARINO </h1>
-                <hr>
-            </center>
+        <center>
+            <hr>
+            <h1 id="titulo-marino"> MENÚ MARINO </h1>
+            <hr>
+        </center>
+        <div class="animate__animated animate__bounceIn">
             <div class="container-items">
-
-            <!--ARROZ CHAUFA DE MARISCOS-->
+                <!--ARROZ CHAUFA DE MARISCOS-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/Arroz-chaufa-de-mariscos.jpg" alt="producto" />
@@ -153,7 +148,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--BROCHETAS DE LANGOSTA Y CONCHA-->
+                <!--BROCHETAS DE LANGOSTA Y CONCHA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/Brochetas de langostino y concha.jpg" alt="producto" />
@@ -164,7 +159,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--CEVICHE DE PESCADO-->
+                <!--CEVICHE DE PESCADO-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/ceviche-de-pescado.jpg" alt="producto" />
@@ -175,7 +170,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--CHICHARRON DE PESCADO-->
+                <!--CHICHARRON DE PESCADO-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/Chicharron de pescado.jpg" alt="producto" />
@@ -186,18 +181,18 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--PAELA DE MARISCOS-->
+                <!--PAELA DE MARISCOS-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/Paella de Mariscos.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
-                       <h2><?php echo $nombre13; ?></h2>
+                        <h2><?php echo $nombre13; ?></h2>
                         <p class="price">$<?php echo $precio13; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-            <!--CHICHARRON DE POTA-->
+                <!--CHICHARRON DE POTA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Mariscos/Chicharron de pota.jpg" alt="producto" />
@@ -209,15 +204,16 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <center>
-                <hr>
-                <h1 id="titulo-parrillas"> PARRILLAS </h1>
-                <hr>
-            </center>
+        <center>
+            <hr>
+            <h1 id="titulo-parrillas"> PARRILLAS </h1>
+            <hr>
+        </center>
+        <div class="animate__animated animate__bounceIn">
             <div class="container-items">
-
-             <!--CHULETA DE CARNE-->
+                <!--CHULETA DE CARNE-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/carnes-chuleta-300x300.jpg" alt="producto" />
@@ -228,7 +224,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-             <!--PARRILLA ECONOMICA-->
+                <!--PARRILLA ECONOMICA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/Parrilla economica.jpg" alt="producto" />
@@ -239,18 +235,18 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-             <!--COSTILLAS BBQ-->
+                <!--COSTILLAS BBQ-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/Costilla BBQ.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
-                       <h2><?php echo $nombre17; ?></h2>
+                        <h2><?php echo $nombre17; ?></h2>
                         <p class="price">$<?php echo $precio17; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-             <!--PARRILLA FAMILIAR-->
+                <!--PARRILLA FAMILIAR-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/parrilla familiar.jpg" alt="producto" />
@@ -261,7 +257,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-             <!--PARRILLA CLASICA FAMILIAR-->
+                <!--PARRILLA CLASICA FAMILIAR-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/parrilla-clasica-familiar.jpg" alt="producto" />
@@ -272,7 +268,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-             <!--PARRILLA PARA 2-->
+                <!--PARRILLA PARA 2-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Parrillas/Parrilla para 2.jpg" alt="producto" />
@@ -284,15 +280,16 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <center>
-                <hr>
-                <h1 id="titulo-bebidas"> BEBIDAS </h1>
-                <hr>
-            </center>
+        <center>
+            <hr>
+            <h1 id="titulo-bebidas"> BEBIDAS </h1>
+            <hr>
+        </center>
+        <div class="animate__animated animate__bounceIn">
             <div class="container-items">
-
-             <!--INCA KOLA-->
+                <!--INCA KOLA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/inca-kola.jpg" alt="producto" />
@@ -303,7 +300,7 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-              <!--CHICHA MORADA-->
+                <!--CHICHA MORADA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/jarra-de-chicha.jpg" alt="producto" />
@@ -314,24 +311,25 @@
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
-              <!--MARACUYA-->
+                <!--MARACUYA-->
                 <div class="item">
                     <figure>
                         <img src="../Imagenes/Platos y Bebidas/jarra-de-maracuya.jpg" alt="producto" />
                     </figure>
                     <div class="info-product">
-                          <h2><?php echo $nombre23; ?></h2>
+                        <h2><?php echo $nombre23; ?></h2>
                         <p class="price">$<?php echo $precio23; ?></p>
                         <button class="btn-add-cart">Añadir al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <?php include_once '../PHP/Footer.php'; ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+<?php include_once '../PHP/Footer.php'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 
 <script>
